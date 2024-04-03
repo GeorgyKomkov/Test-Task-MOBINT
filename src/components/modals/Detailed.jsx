@@ -1,15 +1,17 @@
 import ReactModal from 'react-modal';
 import { observer } from 'mobx-react-lite'
-import modalStore from '../../store/modal';
-import cardInfoStore from '../../store/cardInfo';
 import  { useTranslation } from 'react-i18next';
-
+import { useStores } from '../../context/root-store-context';
 
 const Detiled = observer(() => {
     const { t } = useTranslation();
+     const { modal } = useStores()
+     const {card : { activeCard }}  =  useStores()
+
 
     const handleCloseModal = () => {
-        modalStore.closeModal();
+        modal.closeModal();
+
     };
 
 
@@ -17,7 +19,7 @@ const Detiled = observer(() => {
 
         <ReactModal
             className="modal-content"
-            isOpen={modalStore.isOpened && modalStore.type === 'detailed'}
+            isOpen={modal.isOpened && modal.type === 'detailed'}
             onRequestClose={handleCloseModal}
             style={{
                 overlay: {
@@ -31,13 +33,13 @@ const Detiled = observer(() => {
         >
             <h2>{t('modal.detailed')}</h2>
             <ul>
-                <li>{t('modal.name')} - {cardInfoStore.activeCard.mobileAppDashboard.companyName}</li>
-                <li>{t('modal.level')} - {cardInfoStore.activeCard.customerMarkParameters.loyaltyLevel.number}</li>
-                <li>{t('modal.id')} - {cardInfoStore.activeCard.company.companyId}</li>
-                <li>{t('modal.cashToMark')}- {cardInfoStore.activeCard.customerMarkParameters.loyaltyLevel.cashToMark}</li>
-                <li>{t('modal.markToCash')}  - {cardInfoStore.activeCard.customerMarkParameters.loyaltyLevel.markToCash}</li>
-                <li>{t('modal.requiredSum')}  - {cardInfoStore.activeCard.customerMarkParameters.loyaltyLevel.requiredSum}</li>
-                <li>{t('modal.mark')} - {cardInfoStore.activeCard.customerMarkParameters.mark}</li>
+                <li>{t('modal.name')} - {activeCard.mobileAppDashboard.companyName}</li>
+                <li>{t('modal.level')} - {activeCard.customerMarkParameters.loyaltyLevel.number}</li>
+                <li>{t('modal.id')} - {activeCard.company.companyId}</li>
+                <li>{t('modal.cashToMark')}- {activeCard.customerMarkParameters.loyaltyLevel.cashToMark}</li>
+                <li>{t('modal.markToCash')}  - {activeCard.customerMarkParameters.loyaltyLevel.markToCash}</li>
+                <li>{t('modal.requiredSum')}  - {activeCard.customerMarkParameters.loyaltyLevel.requiredSum}</li>
+                <li>{t('modal.mark')} - {activeCard.customerMarkParameters.mark}</li>
             </ul>
             <div>
                 <button className='modal-button modal-button-close' onClick={handleCloseModal}>{t('modal.colseButtonDetailed')}</button>

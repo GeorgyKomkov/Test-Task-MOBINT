@@ -1,19 +1,19 @@
 import ReactModal from 'react-modal';
 import { observer } from 'mobx-react-lite'
-import modalStore from '../../store/modal';
-import cardInfoStore from '../../store/cardInfo';
 import { toast } from 'react-toastify';
 import  { useTranslation } from 'react-i18next';
+import { useStores } from '../../context/root-store-context';
 
 
 const Remove = observer(() => {
     const { t } = useTranslation();
+    const { card , modal } = useStores();
     const handleCloseModal = () => {
-        modalStore.closeModal();
+        modal.closeModal();
     };
     const hendleRemoveCard = () => {
-        cardInfoStore.filterCards(cardInfoStore.activeCard.company.companyId)
-        modalStore.closeModal();
+        card.filterCards(card.activeCard.company.companyId)
+        modal.closeModal();
         toast.success('Вы удалили карточку!');
     }
 
@@ -21,7 +21,7 @@ const Remove = observer(() => {
 
         <ReactModal
             className="modal-content"
-            isOpen={modalStore.isOpened && modalStore.type === 'remove'}
+            isOpen={modal.isOpened && modal.type === 'remove'}
             onRequestClose={handleCloseModal}
             style={{
                 overlay: {
@@ -42,7 +42,7 @@ const Remove = observer(() => {
                 },
             }}
         >
-            <h2>{t('modal.removeTitle')} {cardInfoStore.activeCard.mobileAppDashboard.companyName} ? </h2>
+            <h2>{t('modal.removeTitle')} {card.activeCard.mobileAppDashboard.companyName} ? </h2>
         
             <div>
                 <button className='modal-button modal-button-delete' onClick={hendleRemoveCard}>{t('modal.buttonRemove')}</button>

@@ -4,20 +4,22 @@ import modalStore from '../../store/modal';
 import exclamation from '../../res/img/exclamation_white.png'
 import errorStore from '../../store/errors.';
 import  { useTranslation } from 'react-i18next';
+import { useStores } from '../../context/root-store-context';
 
 const ErrorModal = observer(() => {
     const { t } = useTranslation();
+    const { error, modal } = useStores();
 
     const handleCloseModal = () => {
-        modalStore.closeModal();
-        errorStore.addError();
+        modal.closeModal();
+        error.addError();
     };
 
     return (
 
         <ReactModal
             className="modal-content"
-            isOpen={modalStore.isOpened && modalStore.type === 'error'}
+            isOpen={modal.isOpened && modal.type === 'error'}
             onRequestClose={handleCloseModal}
             style={{
                 overlay: {
@@ -34,7 +36,7 @@ const ErrorModal = observer(() => {
                 alt="Удалить карточку"
             />
             <h2>{t('modal.errorTitle')}</h2>
-            <p>{errorStore.text}</p>
+            <p>{error.text}</p>
             <div>
                 <button className='modal-button modal-button-close' onClick={handleCloseModal}>{t('modal.buttunClose')}</button>
             </div>

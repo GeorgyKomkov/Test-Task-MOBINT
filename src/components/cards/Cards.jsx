@@ -1,47 +1,21 @@
-import cardInfoStore from '../../store/cardInfo'
 import eye from '../../res/img/eye_white.png';
 import trashWhite from "../../res/img/trash_white.png"
-import modalStore from '../../store/modal';
 import { observer } from 'mobx-react-lite'
 import EmptyCardsMessage from '../EmptyCardsMessage';
 import  { useTranslation } from 'react-i18next';
-// {
-//   company: {
-//     companyId: "d6295574-5ebe-46df-a13c-c456b753ca0c"
-//   },
-//   customerMarkParameters: {
-//     loyaltyLevel: {
-//       number: 4,
-//       name: "второй",
-//       requiredSum: 18350,
-//       markToCash: 71,
-//       cashToMark: 17
-//     },
-//     mark: 9636
-//   },
-//   mobileAppDashboard: {
-//     companyName: "Венская кофейня",
-//     logo: "http://bonusmoney.info/image/mail/logo1.png",
-//     backgroundColor: "#C609DD",
-//     mainColor: "#8C384C",
-//     cardBackgroundColor: "#CE1CDD",
-//     textColor: "#AFF006",
-//     highlightTextColor: "#538694",
-//     accentColor: "#2E2937"
-//   }
-// }
-
+import { useStores } from '../../context/root-store-context';
 
 
 const Cards = observer(() => {
+    const {card, modal} = useStores()
     const { t } = useTranslation();
     const hendleClick = (card, modalType) => {
-        modalStore.openModlal(modalType);
-        cardInfoStore.setActiveCard(card);
+        modal.openModlal(modalType);
+        card.setActiveCard(card);
     };
 
     return (
-        cardInfoStore.cardsInfo.map(cardInfo => (
+        card.cardsInfo.map(cardInfo => (
             (
                 <div key={cardInfo.company.companyId}>
                     <div className="card" style={{ backgroundColor: cardInfo.mobileAppDashboard.cardBackgroundColor}}>

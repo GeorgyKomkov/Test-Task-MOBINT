@@ -1,15 +1,16 @@
 import ReactModal from 'react-modal';
 import { observer } from 'mobx-react-lite'
-import modalStore from '../../store/modal';
 import  { useTranslation } from 'react-i18next';
+import { useStores } from '../../context/root-store-context';
 
 
 const ShowCard = observer(() => {
 
     const { t } = useTranslation();
+    const { modal } = useStores();
 
     const handleCloseModal = () => {
-        modalStore.closeModal();
+        modal.closeModal();
     };
 
 
@@ -17,7 +18,7 @@ const ShowCard = observer(() => {
 
         <ReactModal
             className="modal-content"
-            isOpen={modalStore.isOpened && modalStore.type === 'show'}
+            isOpen={modal.isOpened && modal.type === 'show'}
             onRequestClose={handleCloseModal}
             style={{
                 overlay: {
