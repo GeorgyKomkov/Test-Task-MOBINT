@@ -14,13 +14,12 @@ const currentUrl = {
 
 const getAllCards = async (offset = 0, limit = 10) => {
 
-    const { data } = await axios.post(currentUrl.allCardsIdeal, {
+    const { data } = await axios.post(currentUrl.allCards, {
       offset,
       limit
     }, {
       headers: currentHeaders
     });
-    console.log('123123213')
     return data.companies;
   
 };
