@@ -1,5 +1,5 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import {  getAllCards, } from '../api/api.js'
+import  getAllCards from '../api/api.js'
 import modalStore from './modal.js';
 import errorStore from './errors..js';
 

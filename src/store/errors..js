@@ -26,6 +26,7 @@ class ErrorStore {
         break;
       default:
         this.text = 'Произошла ошибка при загрузке данных';
+        console.error(error)
         toast.error('Произошла ошибка при загрузке данных');
     }
   }
