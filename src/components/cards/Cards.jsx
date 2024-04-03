@@ -9,9 +9,9 @@ import { useStores } from '../../context/root-store-context';
 const Cards = observer(() => {
     const {card, modal} = useStores()
     const { t } = useTranslation();
-    const hendleClick = (card, modalType) => {
+    const hendleClick = (currentCard, modalType) => {
         modal.openModlal(modalType);
-        card.setActiveCard(card);
+        card.setActiveCard(currentCard);
     };
 
     return (
