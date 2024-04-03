@@ -12,7 +12,7 @@ const currentUrl = {
   "allCardsError": "http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesError",
 };
 
-const getAllCards = async (offset = 0, limit = 5) => {
+const getAllCards = async (offset = 0, limit = 10) => {
 
     const { data } = await axios.post(currentUrl.allCards, {
       offset,
