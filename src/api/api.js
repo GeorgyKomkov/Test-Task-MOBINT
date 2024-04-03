@@ -12,8 +12,8 @@ const currentUrl = {
   "allCardsError": "http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesError",
 };
 
-const getAllCards = async (offset = 50, limit = 5) => {
-  try {
+const getAllCards = async (offset = 0, limit = 5) => {
+
     const { data } = await axios.post(currentUrl.allCards, {
       offset,
       limit
@@ -22,46 +22,9 @@ const getAllCards = async (offset = 50, limit = 5) => {
     });
 
     return data.companies;
-  } catch (e) {
-    console.error('что то не так', e);
-  }
-};
-
-
-const getAllCardsLong = async (offset = 0, limit = 10) => {
-
-  const { data } = await axios.post(currentUrl.allCardsLong, {
-    offset,
-    limit
-  }, {
-    headers: currentHeaders
-  });
-  return data.companies;
+  
 };
 
 
 
-const getAllCardsIdeal = async (offset = 0, limit = 5) => {
-
-    const { data } = await axios.post(currentUrl.allCardsIdeal, {
-      offset,
-      limit
-    }, {
-      headers: currentHeaders
-    });
-    return data.companies;
-};
-
-
-const getAllCardsError = async (offset = 0, limit = 5) => {
-
-  const { data } = await axios.post(currentUrl.allCardsError, {
-    offset,
-    limit
-  }, {
-    headers: currentHeaders
-  });
-  return data.companies;
-};
-
-export { getAllCards, getAllCardsIdeal, getAllCardsLong, getAllCardsError };
+export { getAllCards };
