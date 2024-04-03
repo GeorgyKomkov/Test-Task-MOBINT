@@ -1,38 +1,225 @@
-.App {
+@font-face {
+  font-family: 'SegoeUIBold';
+  src: url('./res/fonts/SegoeUIBold/SegoeUIBold.eot');
+  src: url('./res/fonts/SegoeUIBold/SegoeUIBold.eot?#iefix') format('embedded-opentype'),
+       url('./res/fonts/SegoeUIBold/SegoeUIBold.woff') format('woff'),
+       url('./res/fonts/SegoeUIBold/SegoeUIBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SegoeUIRegular';
+  src: url('./res/fonts/SegoeUIRegular/SegoeUIRegular.eot');
+  src: url('./res/fonts/SegoeUIRegular/SegoeUIRegular.eot?#iefix') format('embedded-opentype'),
+       url('./res/fonts/SegoeUIRegular/SegoeUIRegular.woff') format('woff'),
+       url('./res/fonts/SegoeUIRegular/SegoeUIRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #efefef;
+  height: auto;
+  width: auto;
+}
+
+.heading {
+  background-color: #ffffff;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 4vw; 
+}
+
+.heading-text {
+  margin-top: 4vw; 
+  margin-bottom: 4vw; 
+  text-align: center;
+  font-size: 10vw; 
+  color: #2688eb;
+  font-family: 'SegoeUIRegular', sans-serif;
+}
+
+.preloader-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 4vw; 
+}
+
+.preloader-text {
+  margin-top: 2vw;
+  font-size: 6vw;
+  color: #1a1a1a;
+  font-family: 'SegoeUIBold', sans-serif;
+}
+
+.update-indicator {
+  position: fixed;
+  background-color: #ffffff;
+  border-radius: 100%; 
+  z-index: 1;
+}
+
+.card {
+  width: 80vw;
+  text-align: center;
+  margin-top: 4vw; 
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 55px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.card-header p {
+  font-size: 10vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.card-header img {
+  max-width: 15vw; 
+  width: auto; 
+  height: auto; 
+  border-radius: 50%; 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px; 
+}
+
+.mark {
+  font-size: 6vw;
+  margin-right: 2px; 
+}
+
+.description-mark {
+  font-size: 4vw; 
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column; 
+  margin-right: 20vw; 
+}
+
+.detail-item span {
+  font-size: 4vw; 
+  font-family: 'SegoeUIRegular', sans-serif; 
+}
+
+.detail-item p {
+  font-size: 2vw;
+  font-family: 'SegoeUIRegular', sans-serif; 
+
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between; /* Для равномерного распределения между элементами */
+
+  gap: 8vw;
+}
+
+.card-footer .btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  font-size: 4vw;
+  border-radius: 15px;
+  cursor: pointer;
+  width: auto; 
+  height: auto; 
+  flex-grow: 1;
+}
+
+.card-footer .icon {
+
+  border-radius: 100%; 
+  width: 8vw; 
+  cursor: pointer;
+  
+}
+
+.modal {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal h2 {
+  text-align: center;
+}
+
+.modal-content {
+  width: 50vw;
+  height: auto; 
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.modal-img {
+  width: 10vw;
+  height: auto;
+  margin-bottom: 20px; 
+  background-color: #ff0000;
+  border-radius: 100%;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-button-delete {
+  background-color: #ff0000;
   color: white;
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.modal-button-close {
+  background-color: #cccccc;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.is-empty{
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  font-size: 4vw; 
 }
