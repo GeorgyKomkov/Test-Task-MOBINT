@@ -20,7 +20,7 @@ const getAllCards = async (offset = 0, limit = 10) => {
     }, {
       headers: currentHeaders
     });
-
+    console.log('123123213')
     return data.companies;
   
 };
