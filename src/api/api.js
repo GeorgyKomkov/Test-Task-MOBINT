@@ -6,7 +6,7 @@ const currentHeaders = {
 };
 
 const currentUrl = {
-  allCards: "http://devapp.bonusmoney.pro/mobileapp/getAllCompanies",
+  allCards: "https://devapp.bonusmoney.pro/mobileapp/getAllCompanies",
   allCardsIdeal: "http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesIdeal",
   allCardsLong:"http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesLong",
   allCardsError: "http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesError",
