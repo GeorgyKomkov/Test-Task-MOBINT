@@ -6,15 +6,15 @@ const currentHeaders = {
 };
 
 const currentUrl = {
-  "allCards": "http://devapp.bonusmoney.pro/mobileapp/getAllCompanies",
-  "allCardsIdeal": "http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesIdeal",
-  "allCardsLong":"http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesLong",
-  "allCardsError": "http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesError",
+  allCards: "http://devapp.bonusmoney.pro/mobileapp/getAllCompanies",
+  allCardsIdeal: "http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesIdeal",
+  allCardsLong:"http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesLong",
+  allCardsError: "http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesError",
 };
 
 const getAllCards = async (offset = 0, limit = 10) => {
 
-    const { data } = await axios.post(currentUrl.allCards, {
+    const { data } = await axios.post(currentUrl.allCardsIdeal, {
       offset,
       limit
     }, {
