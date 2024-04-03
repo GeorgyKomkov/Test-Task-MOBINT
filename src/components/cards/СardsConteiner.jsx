@@ -1,15 +1,12 @@
 import { useEffect, useState } from 'react';
-import { observer } from 'mobx-react-lite'
+import { observer } from 'mobx-react-lite';
 import PreloadComponent from '../spiners/PreloadComponent.jsx';
-import Cards from './Cards.jsx';
 import { useStores } from '../../context/root-store-context';
-
+import Cards from './Cards.jsx';
 
 const СardsConteiner = observer(() => {
-
-
   const [isAtBottom, setIsAtBottom] = useState(false);
-  const { card } = useStores()
+  const { card } = useStores();
   const handleScroll = () => {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       setIsAtBottom(true);
@@ -17,6 +14,10 @@ const СardsConteiner = observer(() => {
       setIsAtBottom(false);
     }
   };
+
+  useEffect(() => {
+    card.getCardsInfo();
+  }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -28,20 +29,9 @@ const СardsConteiner = observer(() => {
   useEffect(() => {
     if (isAtBottom) {
       card.getCardsInfo();
-
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAtBottom]);
-
-
-  useEffect(() => {
-    card.getCardsInfo();
-
-
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
 
   return (
     <>
@@ -50,7 +40,6 @@ const СardsConteiner = observer(() => {
 
     </>
   );
-
 });
 
 export default СardsConteiner;

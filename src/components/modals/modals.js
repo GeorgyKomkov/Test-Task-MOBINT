@@ -1,7 +1,7 @@
-import Remove from "../modals/Remove";
-import Detiled from "../modals/Detailed";
-import ShowCard from "./ShowCard";
-import ErrorModal from "./Error";
+import Remove from './Remove';
+import Detiled from './Detailed';
+import ShowCard from './ShowCard';
+import ErrorModal from './Error';
 
 const modals = {
   show: ShowCard,
@@ -16,6 +16,7 @@ const getModalComponent = (type) => {
 
   const ModalComponent = getModal(type);
 
+  // eslint-disable-next-line react/react-in-jsx-scope
   return <ModalComponent />;
 };
 

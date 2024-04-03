@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 
 class ErrorStore {
   error = null;
+
   text = '';
 
   constructor() {
@@ -26,7 +27,6 @@ class ErrorStore {
         break;
       default:
         this.text = 'Произошла ошибка при загрузке данных';
-        console.error(error)
         toast.error('Произошла ошибка при загрузке данных');
     }
   }
