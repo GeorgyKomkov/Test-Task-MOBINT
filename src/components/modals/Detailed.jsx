@@ -5,10 +5,11 @@ import { useStores } from '../../context/root-store-context';
 
 const Detiled = observer(() => {
   const { t } = useTranslation();
-  const { modal } = useStores();
-  const { card: { activeCard } } = useStores();
+  const { modal, card: { activeCard } } = useStores();
 
   const handleCloseModal = () => modal.closeModal();
+
+  const { mobileAppDashboard, customerMarkParameters, company } = activeCard;
 
   return (
     <ReactModal
@@ -29,51 +30,38 @@ const Detiled = observer(() => {
       <ul>
         <li>
           {t('modal.name')}
-          {' '}
-          -
-          {' '}
-          {activeCard.mobileAppDashboard.companyName}
+          {' - '}
+          {mobileAppDashboard.companyName}
         </li>
         <li>
           {t('modal.level')}
-          {' '}
-          -
-          {' '}
-          {activeCard.customerMarkParameters.loyaltyLevel.number}
+          {' - '}
+          {customerMarkParameters.loyaltyLevel.name}
         </li>
         <li>
           {t('modal.id')}
-          {' '}
-          -
-          {' '}
-          {activeCard.company.companyId}
+          {' - '}
+          {company.companyId}
         </li>
         <li>
           {t('modal.cashToMark')}
-          -
-          {' '}
-          {activeCard.customerMarkParameters.loyaltyLevel.cashToMark}
+          {' - '}
+          {customerMarkParameters.loyaltyLevel.cashToMark}
         </li>
         <li>
           {t('modal.markToCash')}
-          {' '}
-          -
-          {' '}
-          {activeCard.customerMarkParameters.loyaltyLevel.markToCash}
+          {' - '}
+          {customerMarkParameters.loyaltyLevel.markToCash}
         </li>
         <li>
           {t('modal.requiredSum')}
-          {' '}
-          -
-          {' '}
-          {activeCard.customerMarkParameters.loyaltyLevel.requiredSum}
+          {' - '}
+          {customerMarkParameters.loyaltyLevel.requiredSum}
         </li>
         <li>
           {t('modal.mark')}
-          {' '}
-          -
-          {' '}
-          {activeCard.customerMarkParameters.mark}
+          {' - '}
+          {customerMarkParameters.mark}
         </li>
       </ul>
       <div>
@@ -85,9 +73,7 @@ const Detiled = observer(() => {
           {t('modal.colseButtonDetailed')}
         </button>
       </div>
-
     </ReactModal>
-
   );
 });
 
