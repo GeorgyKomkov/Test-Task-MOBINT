@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
-import PreloadComponent from '../spiners/PreloadComponent.jsx';
+import PreloadComponent from '../spiners/PreloadComponent';
 import { useStores } from '../../context/root-store-context';
-import Cards from './Cards.jsx';
+import Cards from './Cards';
 
 const СardsConteiner = observer(() => {
   const [isAtBottom, setIsAtBottom] = useState(false);
@@ -30,7 +30,6 @@ const СardsConteiner = observer(() => {
     if (isAtBottom) {
       card.getCardsInfo();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAtBottom]);
 
   return (
