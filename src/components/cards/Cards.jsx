@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
 import eye from '../../res/img/eye_white.png';
@@ -84,7 +86,6 @@ const Cards = observer(() => {
                 src={trashWhite}
                 alt="Удалить"
                 className="icon"
-
                 onClick={() => hendleClick(cardInfo, 'remove')}
               />
 

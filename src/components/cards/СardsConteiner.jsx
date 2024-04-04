@@ -7,6 +7,7 @@ import Cards from './Cards';
 const СardsConteiner = observer(() => {
   const [isAtBottom, setIsAtBottom] = useState(false);
   const { card } = useStores();
+
   const handleScroll = () => {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       setIsAtBottom(true);

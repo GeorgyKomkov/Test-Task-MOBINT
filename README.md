@@ -1,7 +1,7 @@
 [![CI](https://github.com/GeorgyKomkov/Test-Task-MOBINT/actions/workflows/lint.yaml/badge.svg)](https://github.com/GeorgyKomkov/Test-Task-MOBINT/actions/workflows/lint.yaml)
 ## Тестовое задание на вакансию Frontend-разработчика в компании "ООО МОБИНТ"
 
-## Начало работы
+## Начало работыё
 
 1. **Клонируйте репозиторий:**
     ```bash

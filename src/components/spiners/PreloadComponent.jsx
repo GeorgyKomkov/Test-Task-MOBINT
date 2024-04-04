@@ -2,7 +2,7 @@
 import { ClipLoader } from 'react-spinners';
 import { useTranslation } from 'react-i18next';
 
-function Preload() {
+const Preload = () => {
   const { t } = useTranslation();
   return (
     <div className="preloader-container">
@@ -13,6 +13,6 @@ function Preload() {
     </div>
 
   );
-}
+};
 
 export default Preload;

@@ -1,9 +1,9 @@
 import { I18nextProvider, initReactI18next } from 'react-i18next';
 import i18next from 'i18next';
 import App from './App';
-import resources from './locales/index.js';
-import RootStore from './store/root-store.js';
-import { RootStoreContext } from './context/root-store-context.js';
+import resources from './locales/index';
+import RootStore from './store/root-store';
+import { RootStoreContext } from './context/root-store-context';
 
 const Init = () => {
   const i18n = i18next.createInstance();
@@ -15,6 +15,7 @@ const Init = () => {
   return (
     <>
       <I18nextProvider i18n={i18n} />
+      {/* eslint-disable-next-line react/jsx-no-constructed-context-values */}
       <RootStoreContext.Provider value={new RootStore()}>
         <App />
       </RootStoreContext.Provider>
