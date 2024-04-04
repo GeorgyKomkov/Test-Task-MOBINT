@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite';
 import PreloadComponent from '../spiners/PreloadComponent';
 import { useStores } from '../../context/root-store-context';
 import Cards from './Cards';
+import EmptyCardsMessage from '../EmptyCardsMessage';
 
 const СardsConteiner = observer(() => {
   const [isAtBottom, setIsAtBottom] = useState(false);
@@ -37,7 +38,7 @@ const СardsConteiner = observer(() => {
     <>
       <Cards />
       {card.isLoading ? <PreloadComponent /> : null}
-
+      <EmptyCardsMessage />
     </>
   );
 });

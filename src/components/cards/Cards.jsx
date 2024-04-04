@@ -4,7 +4,6 @@ import { observer } from 'mobx-react-lite';
 import { useTranslation } from 'react-i18next';
 import eye from '../../res/img/eye_white.png';
 import trashWhite from '../../res/img/trash_white.png';
-import EmptyCardsMessage from '../EmptyCardsMessage';
 import { useStores } from '../../context/root-store-context';
 
 const Cards = observer(() => {
@@ -101,9 +100,7 @@ const Cards = observer(() => {
                 {t('card.buttonDetailedName')}
               </button>
             </div>
-
           </div>
-          <EmptyCardsMessage />
         </div>
 
       )
