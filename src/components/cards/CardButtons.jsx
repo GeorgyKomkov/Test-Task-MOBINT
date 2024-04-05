@@ -19,6 +19,7 @@ const CardsButtons = observer(({ cardInfo }) => {
         style={{
           backgroundColor: cardInfo.mobileAppDashboard.mainColor,
           marginRight: '20vw',
+          marginLeft: '4vw',
         }}
         src={eye}
         alt="Посмотреть"

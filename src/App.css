@@ -182,11 +182,9 @@
   align-items: center; 
   width: 100vw;
   height: 100vh;
-}
-
-.modal h2 {
   text-align: center;
 }
+
 
 .modal-content {
   width: 50vw;
@@ -196,6 +194,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center; 
   align-items: center;
 }
 
@@ -231,9 +230,9 @@
   font-size: 4vw; 
 }
 .ReactModal__Overlay {
-  z-index: 1000; /* Устанавливаем более высокий z-index по умолчанию */
+  z-index: 1000; 
 }
 
 .ReactModal__Overlay--after-open {
-  z-index: 1000; /* Устанавливаем более высокий z-index при открытии модального окна */
+  z-index: 1000; 
 }
