@@ -39,9 +39,11 @@
 }
 
 .heading {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background-color: #ffffff;
   width: 100%;
-  margin-top: 0;
   margin-bottom: 4vw; 
 }
 
@@ -227,4 +229,11 @@
   justify-content: center; 
   align-items: center; 
   font-size: 4vw; 
+}
+.ReactModal__Overlay {
+  z-index: 1000; /* Устанавливаем более высокий z-index по умолчанию */
+}
+
+.ReactModal__Overlay--after-open {
+  z-index: 1000; /* Устанавливаем более высокий z-index при открытии модального окна */
 }
