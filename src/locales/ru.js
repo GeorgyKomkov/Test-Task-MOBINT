@@ -5,7 +5,7 @@ const ru = {
       name: 'Название',
       level: 'Текущий уровень',
       id: 'ID',
-      cashToMark: 'Кэшбэк',
+      cashToMark: 'Кешбэк',
       markToCash: 'Перевод в наличные',
       requiredSum: 'Требуеммая сумма',
       mark: 'Колличество баллов',
@@ -22,7 +22,7 @@ const ru = {
     card: {
       empty: 'Новых Карточек Нет',
       level: 'Уровень',
-      cashToMark: 'Кэшбэк',
+      cashToMark: 'Кешбэк',
       buttonDetailedName: 'Подробнее',
     },
     header: {

@@ -22,15 +22,15 @@ const App = observer(() => {
   }, []);
 
   return (
-    <div className="container">
+    <div>
 
       {firstLoading ? <LogoIcon /> : (
-        <>
+        <div className="container">
           <HeadingComponent />
           {getModalComponent(modalStore.type)}
           {cardInfoStore.isLoading ? <UpdateIndicator /> : null}
           <СardsConteiner />
-        </>
+        </div>
       )}
       <ToastContainer />
     </div>
